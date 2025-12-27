@@ -27,7 +27,10 @@ class IntroScene(Scene):
         self.current_ind = 0
 
     def handle_events(self, event):
-        pass
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_SPACE:
+                # Пропуск интро - переход к игровой сцене
+                self.ref_scene_manager.change_scene("Game")
 
     def update(self, dt):
         self.current_display_time += dt
